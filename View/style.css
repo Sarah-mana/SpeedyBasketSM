@@ -1,0 +1,258 @@
+body {
+	margin: 0px;
+
+}
+
+#wrap {
+	width: 100%;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	/*background-color: black;*/
+	background-image: url(images/vaches.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+
+}
+#logo {
+	position: absolute;
+}
+#connexion {
+
+	position: absolute;
+	right: 80px;
+	top:0;
+}
+#caddy {
+	position: absolute;
+	right: 0px;
+	top: 80px;
+}
+
+#recherche {
+	
+	position: absolute;
+	right: 0px;
+	top:0;
+}
+
+#home{
+	display: inline-block;
+	width: 100%;
+	margin-top: 60px;
+}
+#home img {
+	margin-top: 20px;
+}
+
+#container { 
+	   width: auto;
+       margin-left: 320px;
+       margin-right: 160px;  
+       min-height: 500px;
+       min-width: 180px; 
+       top:80px;
+       height: 595px;
+       background-color: white;
+}
+
+#bannier {
+	width: 100%;
+	height: 81px;
+	background-color:#9A9595;
+}
+
+#bannier p {
+	font-size: 1.2em;
+}
+
+#bannier form {
+	display: inline-block;	
+	margin-left: 40px;
+}
+
+#filtremarque {
+	width: 25%;
+}
+
+#filtrenouveaute {
+	width: 25%;
+	margin-left: 50%;
+}
+
+#bannier h2 {
+	margin-left: 80%;
+	margin-top: -49px;
+	color: white;
+}
+#bannier h1 {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+#bannier h4 {
+	margin-left: auto;
+	margin-right: 0;
+	width: 280px;
+	color: white;
+}
+
+
+
+/*#menu {
+	position: absolute;
+	display: inline-block;
+	left: 0px;
+}*/
+
+#menu {
+	margin-top: 80px;
+    position: absolute;
+	width: 320px;
+	min-height:500px;
+}
+
+#sousmenu {
+	background-color: aquamarine;
+	width: 320px;
+	height:400px;
+	display: none;
+}   
+
+#cnx{
+	width: 300px;
+    height: 80px;
+    background-color: aqua;
+    position: absolute;
+    right: 158;
+    display: none;
+
+}
+#search{
+	width: 300px;
+    height: 80px;
+    background-color: black;
+    position: absolute;
+    left: 969px;
+    right: 130;
+    display: none;
+
+}
+.article-wrapper {
+   width: 25%;
+    float: left;
+    display: block;
+    height: 241px;
+  
+}
+
+#infarticle {
+	position: absolute;
+	margin-left: 20px;
+
+}
+#caddi {
+	position: absolute;
+	bottom: 24px;
+	left: 120px;
+
+}
+#caddyouvert{
+	position: absolute;
+    width: 160px;
+    margin-top: 160;
+    height: auto;
+    background-color: red;
+    right: 0;
+    display: none;
+
+}
+.featured-image {
+    width: 230px;
+    height: 160px;
+    overflow: hidden;
+}
+
+
+
+#footer {
+	width: 100%;
+	height: 90px;
+	background-color: #464242;
+}
+
+#navigationfooter {
+	
+    width: 88%;
+    list-style: none;
+    margin: 0;
+  
+}
+#navigationfooter li {
+	width: 16%;
+	height: 90px;
+    display: inline-block;
+}
+
+#navigationfooter li a {
+	  display: block;
+	  color: #fff ;
+	  font: 1em "Trebuchet MS",Arial,sans-serif ;
+	  line-height: 1em ;
+	  text-decoration: none ;
+	  padding: 0px 0 ;
+	  margin-top: 0px;
+}
+
+#navigationfooter li a:hover, #navigation li a:focus, #navigation li a:active {
+  text-decoration: underline ;
+}
+table
+{
+border-collapse:collapse;
+width:100%;
+max-width:700px;
+min-width:400px;
+text-align:center;
+margin-left: 10%;
+margin-top: 10px;
+}
+
+caption
+{
+caption-side:bottom;
+font-weight:bold;
+font-style:italic;
+margin:4px;
+}
+
+table,th, td
+{
+border: 1px solid gray;
+}
+
+th, td
+{
+height: 24px;
+padding:4px;
+vertical-align:middle;
+}
+
+th
+{
+background-image:url(table-shaded.png);
+}
+
+.rowtitle
+{
+background: #9CF;
+font-weight:bold;
+}
+
+
+
+
+
+
+
