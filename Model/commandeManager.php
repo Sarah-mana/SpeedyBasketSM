@@ -24,7 +24,7 @@ function totalCommande($db, $idCmd, $totalTTC_panier){
                     WHERE lc.id_commande=".$idCmd;
             $result = $db->query($sql);
 
-            $totalTTC_panier = $result;
+            return $totalTTC_panier = $result;
         }
 
 function totalArticleCommande($db, $idCmd, $qteTotalArticles){
@@ -33,5 +33,7 @@ function totalArticleCommande($db, $idCmd, $qteTotalArticles){
             WHERE lc.id_commande=".$idCmd;
     $result = $db->query($sql);
 
-    $qteTotalArticles = $result;
+    return $qteTotalArticles = $result;
 }
+
+

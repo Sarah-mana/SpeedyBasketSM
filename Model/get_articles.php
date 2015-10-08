@@ -3,7 +3,7 @@
 function get_articles($idCat){
     
     $db = Connect::getInstance();
-    $sql = 'SELECT * FROM tb_article WHERE id_categorie ='.$idCat.' LIMIT 0,5';
+    $sql = 'SELECT * FROM tb_article WHERE id_categorie ='.$idCat.' LIMIT 0,10';
     $result=$db->query($sql);
   	$listeArticles = "";
         while ($ligne = $result->fetch()){
