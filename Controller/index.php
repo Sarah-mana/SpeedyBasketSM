@@ -60,8 +60,16 @@ if (isset($_GET["id"])){
                 $ligneCmd = new LigneCmd();
                 createLigneCmd($db, $idArticle, $idCmd);
                 
-            }
-            echo 'ok';    
+                totalligne();
+                totalarticlecommande();
+                totalcommande();
+    }else{
+                updateLigneCmd();
+                totalligne();
+                totalarticlecommande();
+                totalcommande();
+    }
+              
 //                            setcookie("SpeedyMarketCookie",$idCookie,time(),null,null,false,true);
 
         
