@@ -42,15 +42,15 @@ function selectLigneCmd($db, $idArticle, $idCmd){
 
 function displayLignesCmd ($db, $idCmd){
     
-    $sql  = "SELECT a.url_image, a.a_designation, a.pht, lc.qte_cmde,a_pht*t_taux as 'Total TTC', (a_pht*t_taux)*lc.qte_cmde as 'Montant total TTC'
+    $sql  = 'SELECT a.url_image, a.a_designation, a.pht, lc.qte_cmde,a_pht*t_taux as "Total TTC", (a_pht*t_taux)*lc.qte_cmde as "Montant total TTC"
             FROM tb_ligne_commande as lc
             JOIN tb_article as a ON lc.id_article = a.id_article
             JOIN tb_tva as t ON a.id_tva = t.id_tva
-            WHERE lc.id_commande=".$idCmd."
+            WHERE lc.id_commande='.$idCmd;
     
     $result = $db->query($sql);
     
-    $displayLignes ='';
+    $displayLignes ="";
     
     while ($ligne = $result->fetch()){
         
@@ -60,24 +60,26 @@ function displayLignesCmd ($db, $idCmd){
         $totalLigne = $ligne[6];
         
         
-        $displayLignes .= '<tr>'
-                . '<td><img width='100' height='80' src='images/melon.png'></td>'
-                . '<td>'.$nomArticle.'</td>'
-                . '<td>'.$prixTTC.'</td>'
-                . '<td>'.$qteCmd.'</td>'
-                . '<td>'.$totalLigne.'</td>'
-                
-        
-    }
-}
+        $displayLignes .= "<tr>          
+                <td><img src='images/melon.png'></td>
+                <td>".$nomArticle."</td>
+                <td>".$prixTTC."</td>
+                <td>".$qteCmd."</td>
+                <td>".$totalLigne."</td>";
+                    
+
+    }            
+}        
+   
 
 function totalLigne($db, $idArticle, $idCmd, $prixligneCmd){
-    $sql ='SELECT qte_cmde, (a_pht*t_taux)*qte_cmde as 'Montant total TTC'
+    
+    $sql ="SELECT qte_cmde, (a_pht*t_taux)*qte_cmde as 'Montant total TTC'
             FROM tb_ligne_commande as lc
             JOIN tb_article as a ON lc.id_article = a.id_article
             JOIN tb_tva as t ON a.id_tva = t.id_tva
-            WHERE lc.id_commande='.$idCmd.'
-            AND lc.id_article='.$idArticle;
+            WHERE lc.id_commande=".$idCmd."
+            AND lc.id_article=".$idArticle;
     $result = $db->query($sql);
 
     $prixligneCmd = $result;

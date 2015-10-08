@@ -42,32 +42,40 @@ if (isset($_GET["id"])){
 
                 
                 var_dump($_COOKIE["SpeedyMarketCookie"]);
+                
+                include_once './View/panier.php';
             }
+            
             
         }
     
     }
-   if (verifLigneCmdExist($db, $idArticles, $idCmd)==false){
-                
+    $idCmd = $_COOKIE["SpeedyMarketCookie"];
+    var_dump($idCmd);
+   if (verifLigneCmdExist($db, $idArticle, $idCmd)==false){
+                var_dump($idArticle);
                  var_dump($cmd);
-                 $idCmd = $_COOKIE["SpeedyMarketCookie"];
+                 
                  createLigneCmd($db, $idArticle, $idCmd);
                  $ligneCmd = new LigneCmd($idArticle,$id_cmd,1,122);
                  var_dump($_COOKIE);
            
-                
-                
-                $ligneCmd = new LigneCmd();
                 createLigneCmd($db, $idArticle, $idCmd);
+               
+//                totalligne();
+//                totalarticlecommande();
+//                totalcommande();
                 
-                totalligne();
-                totalarticlecommande();
-                totalcommande();
+                displayLignesCmd($db, $idCmd);
+                
+                include_once './View/panier.php';
     }else{
-                updateLigneCmd();
-                totalligne();
-                totalarticlecommande();
-                totalcommande();
+//                updateLigneCmd();
+//                totalligne();
+//                totalarticlecommande();
+//                totalcommande();
+        
+                 include_once './View/panier.php';
     }
               
 //                            setcookie("SpeedyMarketCookie",$idCookie,time(),null,null,false,true);

@@ -1,3 +1,8 @@
+<?php
+require './Controller/index.php';
+
+include 'header.php';
+?>
 <div id="container">		
 		  <div id="bannier">
 		  	<a href="valider.php"><button>Valider Panier</button></a>
@@ -5,16 +10,7 @@
 		  <h2>Total : <?= number_format($panier->total(),2,',',' '); ?> € </h2>
 		  <h4>nombre d'article dans votre panier : <?= $panier->count(); ?></h4>
 		  </div>
-  <?php 
-  $ids=array_keys($_SESSION['panier']);
-  if (empty($ids)) {
-  	$produit=array();
-  }else {
-  $produit = $DB->query('SELECT * FROM tb_article WHERE id_article 
-  	IN ('.implode(',',$ids).')');	
-  var_dump($produit);
-  }
-  ?>  
+  
 
 		    <table>
                     
@@ -25,13 +21,18 @@
 						  <th>prix TTC</th>
                                                   <th>total TTC</th>
 						</tr>
-						
-						
+						<?php 
+                                                $idcmd = (int)$_COOKIE["SpeedyMarketCookie"];
+                                                displayLigneCmd($db, $idCmd);
+						?>
 			</table>
 
 	  </div>
     </div>		
 </div>
+
+<?php                                                
+include 'footer.php';
+?>
 </body>
 </html>
-<?php require 'footer.php'; ?>
