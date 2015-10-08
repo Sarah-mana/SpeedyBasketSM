@@ -42,7 +42,7 @@ function selectLigneCmd($db, $idArticle, $idCmd){
 
 function displayLignesCmd ($db, $idCmd){
     
-    $sql  = 'SELECT a.url_image, a.a_designation, a.pht, lc.qte_cmde,a_pht*t_taux as "Total TTC", (a_pht*t_taux)*lc.qte_cmde as "Montant total TTC"
+    $sql  = 'SELECT a.url_image, a.a_designation, a.a_pht, lc.qte_cmde,a_pht*t_taux as "Total TTC", (a_pht*t_taux)*lc.qte_cmde as "Montant total TTC"
             FROM tb_ligne_commande as lc
             JOIN tb_article as a ON lc.id_article = a.id_article
             JOIN tb_tva as t ON a.id_tva = t.id_tva
@@ -51,13 +51,15 @@ function displayLignesCmd ($db, $idCmd){
     $result = $db->query($sql);
     
     $displayLignes ="";
+    var_dump($idCmd);
+    var_dump($result);
     
     while ($ligne = $result->fetch()){
         
         $nomArticle = $ligne[1];
-        $prixTTC = $ligne[5];
+        $prixTTC = $ligne[4];
         $qteCmd = $ligne[3];
-        $totalLigne = $ligne[6];
+        $totalLigne = $ligne[5];
         
         
         $displayLignes .= "<tr>          
@@ -68,7 +70,8 @@ function displayLignesCmd ($db, $idCmd){
                 <td>".$totalLigne."</td>";
                     
 
-    }            
+    }          
+    return $displayLignes;
 }        
    
 

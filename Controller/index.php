@@ -12,6 +12,7 @@ require '../Model/get_articles.php';
 // Connexion à la base de données
 $db = Connect::getInstance();
 
+setcookie("SpeedyMarketCookie","",time(),null,null,false,true);
 
 
 if (isset($_GET["id"])){
@@ -38,12 +39,13 @@ if (isset($_GET["id"])){
                 $idCmd = $cmd->getId_commande();
                
                 $newCookie = (string)$idCmd;
+                var_dump($idCmd);
                setcookie("SpeedyMarketCookie",$newCookie,time()+3600*24,null,null,false,true);
 
                 
                 var_dump($_COOKIE["SpeedyMarketCookie"]);
                 
-                include_once './View/panier.php';
+                require_once '../View/panier.php';
             }
             
             
@@ -57,10 +59,7 @@ if (isset($_GET["id"])){
                  var_dump($cmd);
                  
                  createLigneCmd($db, $idArticle, $idCmd);
-                 $ligneCmd = new LigneCmd($idArticle,$id_cmd,1,122);
-                 var_dump($_COOKIE);
-           
-                createLigneCmd($db, $idArticle, $idCmd);
+                 
                
 //                totalligne();
 //                totalarticlecommande();
@@ -68,18 +67,18 @@ if (isset($_GET["id"])){
                 
                 displayLignesCmd($db, $idCmd);
                 
-                include_once './View/panier.php';
+                require_once '../View/panier.php';
     }else{
 //                updateLigneCmd();
 //                totalligne();
 //                totalarticlecommande();
 //                totalcommande();
         
-                 include_once './View/panier.php';
+        require_once '../View/panier.php';
     }
               
 //                            setcookie("SpeedyMarketCookie",$idCookie,time(),null,null,false,true);
-
+    require_once '../View/panier.php';
         
     }
     

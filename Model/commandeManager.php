@@ -16,7 +16,8 @@ function recupMaxIdCommande($db){
     return $idCmd[0];
 }
 
-function totalCommande($db, $idCmd, $totalTTC_panier){
+function totalCommande($db, $idCmd){
+    
             $sql ="SELECT SUM((a_pht*t_taux)*qte_cmde) as 'Montant total TTC'
                     FROM tb_ligne_commande as lc
                     JOIN tb_article as a ON lc.id_article = a.id_article
@@ -27,7 +28,8 @@ function totalCommande($db, $idCmd, $totalTTC_panier){
             return $totalTTC_panier = $result;
         }
 
-function totalArticleCommande($db, $idCmd, $qteTotalArticles){
+function totalArticleCommande($db, $idCmd){
+    
     $sql ="SELECT SUM(qte_cmde) as 'Quantité commande'
             FROM tb_ligne_commande as lc                 
             WHERE lc.id_commande=".$idCmd;
