@@ -45,7 +45,7 @@ if (isset($_GET["id"])){
                 
                 var_dump($_COOKIE["SpeedyMarketCookie"]);
                 
-                require_once '../View/panier.php';
+                include '../View/panier.php';
             }
             
             
@@ -67,7 +67,6 @@ if (isset($_GET["id"])){
                 
                 displayLignesCmd($db, $idCmd);
                 
-                require_once '../View/panier.php';
     }else{
 //                updateLigneCmd();
 //                totalligne();
@@ -78,7 +77,6 @@ if (isset($_GET["id"])){
     }
               
 //                            setcookie("SpeedyMarketCookie",$idCookie,time(),null,null,false,true);
-    require_once '../View/panier.php';
         
     }
     
